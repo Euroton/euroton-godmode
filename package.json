@@ -1,0 +1,26 @@
+{
+  "name": "@euroton/godmode",
+  "version": "0.1.0",
+  "description": "Internal-only operator UI for euroton-server: dig through DB state, edit plans, grant lifetime subscriptions. Network-gated + bearer-token-protected.",
+  "license": "AGPL-3.0-or-later",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit"
+  },
+  "engines": {
+    "node": ">=22.14.0"
+  },
+  "packageManager": "pnpm@9.15.0",
+  "dependencies": {
+    "preact": "^10.25.1"
+  },
+  "devDependencies": {
+    "@preact/preset-vite": "^2.9.2",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.3"
+  }
+}

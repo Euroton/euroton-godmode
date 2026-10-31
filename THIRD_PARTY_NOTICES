@@ -1,0 +1,6 @@
+Third-party packages in the production build of euroton-godmode, by licence.
+Generated with `pnpm licenses list --prod --json`.
+
+MIT
+  preact 10.29.2
+

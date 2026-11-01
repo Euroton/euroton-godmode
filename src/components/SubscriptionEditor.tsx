@@ -5,7 +5,7 @@ import { tsToHuman } from '../util';
 interface Props {
     userId: string;
     current: Subscription | null;
-    onChanged: (next: Subscription) => void;
+    onChanged: (next: Subscription, planTitle: string) => void;
 }
 
 export function SubscriptionEditor({ userId, current, onChanged }: Props) {
@@ -42,7 +42,7 @@ export function SubscriptionEditor({ userId, current, onChanged }: Props) {
                 PlanID: planId,
                 Lifetime: lifetime || undefined,
             });
-            onChanged(r.Subscription);
+            onChanged(r.Subscription, plans.find((p) => p.ID === r.Subscription.PlanID)?.Title ?? r.Subscription.PlanID);
             setLifetime(false);
         } catch (e) {
             setError((e as Error).message);
@@ -92,7 +92,7 @@ export function SubscriptionEditor({ userId, current, onChanged }: Props) {
                             checked={lifetime}
                             onChange={(e) => setLifetime((e.currentTarget as HTMLInputElement).checked)}
                         />
-                        <span>Set PeriodEnd to 2099-01-01 and disable renew</span>
+                        <span>Set PeriodEnd to 2099-01-01; renewal stays on</span>
                     </label>
                 </div>
             </div>

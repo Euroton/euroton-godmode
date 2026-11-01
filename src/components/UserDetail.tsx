@@ -107,12 +107,12 @@ export function UserDetail({ id, onBack }: Props) {
                                       RenewDisabled: false,
                                   } satisfies Subscription)
                         }
-                        onChanged={(s) =>
+                        onChanged={(s, planTitle) =>
                             setUser({
                                 ...user,
                                 Subscription: {
                                     PlanID: s.PlanID,
-                                    PlanTitle: user.Subscription?.PlanTitle ?? s.PlanID,
+                                    PlanTitle: planTitle,
                                     Cycle: s.Cycle,
                                     PeriodEnd: s.PeriodEnd,
                                 },
